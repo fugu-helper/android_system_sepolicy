@@ -64,3 +64,5 @@ neverallow audioserver { file_type fs_type }:file execute_no_trans;
 # Lengthier explanation here:
 # https://android-developers.googleblog.com/2016/05/hardening-media-stack.html
 neverallow audioserver domain:{ tcp_socket udp_socket rawip_socket } *;
+allow audioserver hdmi_connected_prop:property_service *;
+get_prop(audioserver,hdmi_connected_prop);
